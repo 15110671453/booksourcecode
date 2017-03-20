@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        div {
+            margin: 2px;
+            padding: 2px;
+            width: auto;
+            height: auto;
+            border: 1px solid #000;
+        }
+    </style>
+    <title>HTML之推迟脚本执行</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <h3>HTML之推迟脚本执行</h3>
+    <hr>
+    <!-- 添加脚本 -->
+    <script id="id-script-nodefer" type="text/javascript" src="js/nodefer.js">
+    </script>
+    <!-- 添加文档主体内容 -->
+    <div id="id-div-nodefer">no defer script log:</div>
+    <!-- 添加脚本 -->
+    <script id="id-script-defer" type="text/javascript" src="js/defer.js" defer>
+    </script>
+    <!-- 添加文档主体内容 -->
+    <div id="id-div-defer">defer script log:</div>
+    <!-- 添加脚本 -->
+    <script type="text/javascript">
+        document.getElementById("id-div-nodefer").innerHTML +=
+                "<h3>defer value is " +
+                document.getElementById("id-script-nodefer").defer +
+                "</h3>";
+        document.getElementById("id-div-defer").innerHTML +=
+                "<h3>defer value is " +
+                document.getElementById("id-script-defer").defer +
+                "</h3>";
+    </script>
+</body>
+</html>

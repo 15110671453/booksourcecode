@@ -1,0 +1,27 @@
+CACHE MANIFEST
+#2016-01-08 v1.0.1
+js/bootstrap.js
+js/bootstrap.min.js
+js/DT_bootstrap.js
+js/html5shiv.js
+js/response.min.js
+js/admin.js
+js/main.js
+js/login.js
+js/reg.js
+js/tour.js
+md5/jquery.js
+md5/jquery.md5.js
+css/bootstrap.css
+css/bootstrap.min.css
+login.html
+main.html
+admin.html
+tour.html
+reg.html
+about.html
+404.html
+NETWORK:
+*
+FALLBACK:
+/ /404.html

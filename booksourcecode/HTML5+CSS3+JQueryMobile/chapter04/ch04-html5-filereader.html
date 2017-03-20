@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        html {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 100%;
+        }
+        form {
+            margin-top: 4px;
+            width: 100%;
+            height: auto;
+        }
+        legend {
+            margin: 4px;
+        }
+        h5 {
+            margin: 4px;
+        }
+        article {
+            margin: 4px;
+        }
+        #fileContentArea {
+            margin-top: 4px;
+            width: 100%;
+        }
+    </style>
+    <title>HTML5新特性之画布</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5新特性之FileReader接口</nav>
+    </header>
+    <!-- 添加文档主体内容 -->
+    <form>
+        <fieldset>
+            <legend>读取本地文本文件:</legend>
+            <input type="file" name="fileReader" id="fileReader"
+                   onChange="fileReader_readAsText(this.files);"/><br>
+            <h5>文本文件内容:</h5>
+            <article id="fileContentArea"></article>
+        </fieldset>
+    </form>
+<script type="text/javascript">
+    function fileReader_readAsText(fr){
+        //检测浏览器是否支持FileReader对象
+        if(typeof FileReader == 'undefined'){
+            alert("Check your browser can't support FileReader object!");
+        }
+        var tmpFile = fr[0];
+        var reader = new FileReader();
+        reader.readAsText(tmpFile, 'utf-8');
+        reader.onload = function(e){
+            document.getElementById("fileContentArea").innerHTML =
+                    "<pre>"+ e.target.result+"</pre>";
+        }
+    }
+</script>
+</body>
+</html>

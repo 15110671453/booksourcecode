@@ -1,0 +1,6 @@
+File Reader API
+FileReader接口实例拥有四个方法：
+1)方法：readAsText(file, [encoding])
+2)方法：readAsDataURL(file)
+3)方法：readAsBinaryString(file)
+4)方法：abort()

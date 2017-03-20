@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        nav {
+            font: bold 20px arial,sans-serif;
+            text-align: center;
+        }
+        div {
+            margin: 16px;
+        }
+        h3 {
+            margin: 8px;
+        }
+    </style>
+    <title>HTML5新特性之地理位置</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5新特性之地理位置</nav>
+    </header>
+    <hr>
+    <h3>点击下面按钮来获得您的坐标:</h3>
+    <button onclick="getLocation()">获取您的坐标</button><br>
+    <div id="id-position"></div>
+    <script type="text/javascript">
+        var pos = document.getElementById("id-position");
+        /* 获取用户地理位置 */
+        function getLocation() {
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                pos.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        /* 显示用户地理位置 */
+        function showPosition(position) {
+            pos.innerHTML="Latitude: " + position.coords.latitude +
+                    "<br />Longitude: " + position.coords.longitude;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html manifest="ch09.appcache">
+<head>
+    <title>HTML5+CSS3之轻量级内容管理系统(管理员)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
+    <!-- Bootstrap Admin Theme -->
+    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme-change-size.css">
+    <!-- Datatables -->
+    <link rel="stylesheet" media="screen" href="css/DT_bootstrap.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-admin-theme-change-size.js"></script>
+    <script type="text/javascript" src="vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/DT_bootstrap.js"></script>
+    <script type="text/javascript" src="md5/jquery.js"></script>
+    <script type="text/javascript" src="md5/jquery.md5.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript">
+    </script>
+</head>
+<body class="bootstrap-admin-with-small-navbar">
+<!-- small navbar -->
+<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left bootstrap-admin-theme-change-size">
+                        <li class="text">用户名:</li>
+                        <li><a id="id-a-name" class="size-changer large active"></a></li>
+                        <li><a class="text">用户等级:</a></li>
+                        <li><a id="id-a-level" class="size-changer large active"></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Settings <i class="glyphicon glyphicon-cog"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 登录管理 <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="login.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- main / large navbar -->
+<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="about.html">HTML5轻量级内容管理系统（管理员）</a>
+                </div>
+                <div class="collapse navbar-collapse main-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown">管理<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation" class="dropdown-header">管理</li>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" class="dropdown-header">Dropdown header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">关于</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div>
+    </div><!-- /.container -->
+</nav>
+
+<div class="container">
+    <!-- left, vertical navbar & content -->
+    <div class="row">
+        <!-- left, vertical navbar -->
+        <div class="col-md-2 col-sm-2 bootstrap-admin-col-left">
+            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                <li>
+                    <a href="dashboard.html"><i class="glyphicon glyphicon-chevron-right"></i> 主页</a>
+                </li>
+                <li>
+                    <a href="#id-browser-forminfo"><i class="glyphicon glyphicon-chevron-right"></i> 浏览用户信息</a>
+                </li>
+                <li>
+                    <a href="#id-insert-forminfo"><i class="glyphicon glyphicon-chevron-right"></i> 新建用户信息</a>
+                </li>
+                <li>
+                    <a href="#id-edit-forminfo"><i class="glyphicon glyphicon-chevron-right"></i> 编辑用户信息</a>
+                </li>
+                <li>
+                    <a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i> 关于</a>
+                </li>
+                <!-- calendar.html -->
+                <!--<li class="disabled">
+                    <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> Calendar</a>
+                </li>-->
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div class="col-md-10 col-sm-10">
+            <div class="row">
+                <div class="col-lg-12" id="userinfo">
+                    <div class="page-header">
+                        <h2>轻量级内容管理系统</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">Basic Table</div>
+                        </div>
+                        <div class="bootstrap-admin-panel-content">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            <!--<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">Table with actions</div>
+                        </div>
+                        <div class="bootstrap-admin-panel-content">
+                            <table class="table bootstrap-admin-table-with-actions">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td class="actions">
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="glyphicon glyphicon-pencil"></i>
+                                                Edit
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-success">
+                                                <i class="glyphicon glyphicon-ok-sign"></i>
+                                                Confirm
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="glyphicon glyphicon-bell"></i>
+                                                Notify
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                                Delete
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td class="actions">
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="glyphicon glyphicon-pencil"></i>
+                                                Edit
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-success">
+                                                <i class="glyphicon glyphicon-ok-sign"></i>
+                                                Confirm
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="glyphicon glyphicon-bell"></i>
+                                                Notify
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                                Delete
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td class="actions">
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-primary">
+                                                <i class="glyphicon glyphicon-pencil"></i>
+                                                Edit
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-success">
+                                                <i class="glyphicon glyphicon-ok-sign"></i>
+                                                Confirm
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-warning">
+                                                <i class="glyphicon glyphicon-bell"></i>
+                                                Notify
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                                Delete
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="row">
+                <div class="col-lg-12" id="id-browser-forminfo">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">用户信息</div>
+                        </div>
+                        <div class="bootstrap-admin-panel-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>id</th>
+                                    <th>用户 ID</th>
+                                    <th>用户名</th>
+                                    <th>密码</th>
+                                    <th>权限</th>
+                                    <th>管理</th>
+                                </tr>
+                                </thead>
+                                <tbody id="id-userinfo">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12" id="id-insert-forminfo">
+                    <div class="panel panel-default bootstrap-admin-no-table-panel">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">添加用户信息</div>
+                        </div>
+                        <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+                            <form class="form-horizontal" name="form-insert-userinfo" method="post" action="#" onsubmit="return insert_userinfo();">
+                                <fieldset>
+                                    <legend>表单</legend>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">id(not editable.)</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-id" type="text" value="" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-insert-userid">用户id</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-userid" type="text" value="This is user's id...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-insert-name">用户名</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-name" type="text" value="This is user's name...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-insert-pwd">密码</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-pwd" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-insert-level">用户角色</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-level" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-insert-reserved">用户权限</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-insert-reserved" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <!--<div class="form-group">
+                                        <label class="col-lg-2 control-label" for="disabledInput">Disabled input</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control disabled" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="optionsCheckbox2">Disabled checkbox</label>
+                                        <div class="col-lg-10">
+                                            <label>
+                                                <input type="checkbox" id="optionsCheckbox2" value="option1" disabled="">
+                                                This is a disabled checkbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-warning">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with warning</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputWarning" class="form-control">
+                                            <span class="help-block">Something may have gone wrong</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-error">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with error</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputError" class="form-control">
+                                            <span class="help-block">Please correct the error</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-error">
+                                        <label class="col-lg-2 control-label" for="inputError">Input group with error</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group">
+                                                <input type="text" id="inputError" class="form-control">
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                            <span class="help-block">Please correct the error</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with success</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputSuccess" class="form-control">
+                                            <span class="help-block">Woohoo!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label class="col-lg-2 control-label" for="selectError">Select with success</label>
+                                        <div class="col-lg-10">
+                                            <select id="selectError" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <span class="help-block">Woohoo!</span>
+                                        </div>
+                                    </div>-->
+                                    <button type="submit" class="btn btn-primary">保存</button>
+                                    <button type="reset" class="btn btn-default">取消</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12" id="id-edit-forminfo">
+                    <div class="panel panel-default bootstrap-admin-no-table-panel">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">编辑用户信息</div>
+                        </div>
+                        <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+                            <form class="form-horizontal" name="form-edit-info" method="post" action="#" onsubmit="return edit_userinfo();">
+                                <fieldset>
+                                    <legend>表单</legend>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">id(not editable.)</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-id" type="text" value="" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-edit-userid">用户id</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-userid" type="text" value="This is user's id...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-edit-name">用户名</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-name" type="text" value="This is user's name...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-edit-pwd">密码</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-pwd" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-edit-level">用户角色</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-level" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="id-form-edit-reserved">用户权限</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="id-form-edit-reserved" type="text" value="This is focused...">
+                                        </div>
+                                    </div>
+                                    <!--<div class="form-group">
+                                        <label class="col-lg-2 control-label" for="disabledInput">Disabled input</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control disabled" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label" for="optionsCheckbox2">Disabled checkbox</label>
+                                        <div class="col-lg-10">
+                                            <label>
+                                                <input type="checkbox" id="optionsCheckbox2" value="option1" disabled="">
+                                                This is a disabled checkbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-warning">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with warning</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputWarning" class="form-control">
+                                            <span class="help-block">Something may have gone wrong</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-error">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with error</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputError" class="form-control">
+                                            <span class="help-block">Please correct the error</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-error">
+                                        <label class="col-lg-2 control-label" for="inputError">Input group with error</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group">
+                                                <input type="text" id="inputError" class="form-control">
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                            <span class="help-block">Please correct the error</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label class="col-lg-2 control-label" for="inputError">Input with success</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="inputSuccess" class="form-control">
+                                            <span class="help-block">Woohoo!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label class="col-lg-2 control-label" for="selectError">Select with success</label>
+                                        <div class="col-lg-10">
+                                            <select id="selectError" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <span class="help-block">Woohoo!</span>
+                                        </div>
+                                    </div>-->
+                                    <button type="submit" class="btn btn-primary">保存</button>
+                                    <button type="reset" class="btn btn-default">取消</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="navbar navbar-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <footer role="contentinfo">
+                    <p class="left">HTML5 + CSS3 之轻量级内容管理系统</p>
+                    <p class="right">&copy; 2016 <a href="#" target="_blank">kingwjz</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<input type='button' onclick='set_item()' value='存值'/>
+<input type='button' onclick='get_item()' value='取值'/>
+<input type='button' onclick='clear_all_item()' value='全部清除'/>-->
+</body>
+</html>

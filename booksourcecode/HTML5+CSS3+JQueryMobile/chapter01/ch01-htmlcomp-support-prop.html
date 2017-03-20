@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        div {
+            margin: 2px;
+            padding: 2px;
+            width: auto;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            background: #f0f0f0;
+        }
+    </style>
+    <script type="text/javascript">
+        function isSupport(prop) {
+            return prop in document.createElement('div');
+        }
+    </script>
+    <title>HTML之判断支持属性</title>
+</head>
+<body>
+    <!-- 添加文档内容 -->
+    <h1>HTML之判断支持属性</h1>
+    <hr>
+    <!-- 添加文档内容 -->
+    <div id="id-div"></div>
+    <!-- 添加脚本代码 -->
+    <script type="text/javascript">
+        var prop = ["id", "name", "type", "style", "value", "title"];
+        for(var i in prop) {
+            isSupportProp(prop[i]);
+        }
+        function isSupportProp(v) {
+            if(isSupport(v)) {
+                document.getElementById("id-div").innerHTML +=
+                        "层(div)标签元素支持" + v + "属性" + "<br>";
+            } else {
+                document.getElementById("id-div").innerHTML +=
+                        "层(div)标签元素不支持" + v + "属性" + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>

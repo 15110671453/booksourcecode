@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html manifest="ch09.appcache">
+<head>
+    <title>HTML5+CSS3之轻量级内容管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
+    <!-- Bootstrap Admin Theme -->
+    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme-change-size.css">
+    <!-- Datatables -->
+    <link rel="stylesheet" media="screen" href="css/DT_bootstrap.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-admin-theme-change-size.js"></script>
+    <script type="text/javascript" src="vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/DT_bootstrap.js"></script>
+    <script type="text/javascript" src="md5/jquery.js"></script>
+    <script type="text/javascript" src="md5/jquery.md5.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+    </script>
+</head>
+<body class="bootstrap-admin-with-small-navbar">
+<!-- small navbar -->
+<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left bootstrap-admin-theme-change-size">
+                        <li class="text">用户名:</li>
+                        <li><a id="id-a-name" class="size-changer large active"></a></li>
+                        <li><a class="text">用户等级:</a></li>
+                        <li><a id="id-a-level" class="size-changer large active"></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Settings <i class="glyphicon glyphicon-cog"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown"> <i class="glyphicon glyphicon-user"></i> 登录管理 <i class="caret"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li><a href="login.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- main / large navbar -->
+<nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="about.html">HTML5轻量级内容管理系统</a>
+                </div>
+                <div class="collapse navbar-collapse main-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown">管理<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation" class="dropdown-header">管理</li>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" class="dropdown-header">Dropdown header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">关于</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div>
+    </div><!-- /.container -->
+</nav>
+
+<div class="container">
+    <!-- left, vertical navbar & content -->
+    <div class="row">
+        <!-- left, vertical navbar -->
+        <div class="col-md-2 col-sm-2 bootstrap-admin-col-left">
+            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                <li>
+                    <a href="dashboard.html"><i class="glyphicon glyphicon-chevron-right"></i> 主页</a>
+                </li>
+                <li>
+                    <a href="#id-browser-forminfo"><i class="glyphicon glyphicon-chevron-right"></i> 浏览用户信息</a>
+                </li>
+                <li>
+                    <a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i> 关于</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div class="col-md-10 col-sm-10">
+            <div class="row">
+                <div class="col-lg-12" id="userinfo">
+                    <div class="page-header">
+                        <h2>轻量级内容管理系统</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12" id="id-browser-forminfo">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="text-muted bootstrap-admin-box-title">用户信息</div>
+                        </div>
+                        <div class="bootstrap-admin-panel-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>id</th>
+                                    <th>用户 ID</th>
+                                    <th>用户名</th>
+                                    <th>密码</th>
+                                    <th>权限</th>
+                                </tr>
+                                </thead>
+                                <tbody id="id-userinfo">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="navbar navbar-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <footer role="contentinfo">
+                    <p class="left">HTML5 + CSS3 之轻量级内容管理系统</p>
+                    <p class="right">&copy; 2016 <a href="#" target="_blank">kingwjz</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

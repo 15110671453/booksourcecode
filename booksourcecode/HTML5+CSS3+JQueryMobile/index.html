@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
+<title>第1个jQuery文档</title>
+<script type="text/javascript">
+  //jQuery的页面加载事件
+  $(document).ready(function(e) {
+     $("#msg").css("font-size","9pt");	  //更改div元素的字体
+	 //向div中添加一个单击事件
+	 $("#msg").click(function(e) {
+         alert($(this).html());
+    });
+	//向页面上添加一个新的div元素
+	$("<div>", {
+	  style:"font-size:9pt",	  		//设置div的样式
+	  text: "单击这里更改颜色",	  	//设置div的文本内容
+	  //为文本添加单击事件
+	  click: function(){
+		$(this).css("background","#9F3");
+	  }
+	}).appendTo("body");				//将div添加到body中
+	
+}); 
+</script>
+
+</head>
+
+<body>
+ <div id="msg">欢迎阅读构建跨平台APP系列图书</div>
+</body>
+</html>

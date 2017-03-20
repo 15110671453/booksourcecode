@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        /* 各游览器兼容CSS */
+        .div-color {
+            height:64px;
+            background-color:#fff;   /*所有识别*/
+            background-color:grey\9; /*IE6、7、8识别*/
+        }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            _:-ms-fullscreen, :root .div-color {
+                background-color:blue;
+           } /* IE10+ */
+        }
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .div-color {
+                background-color:yellow;
+            }/* Opera 有效 */
+        }
+        .div-color, x:-moz-any-link, x:default {
+            background-color:#4eff00;/*IE7、Firefox3.5及以下 识别 */
+        }
+        @-moz-document url-prefix() {
+            .div-color {
+                background-color:green;/*仅 Firefox 识别 */
+            }
+        }
+        .browsers td {
+            width:8%;
+            text-align:center;
+            padding:8px;
+        }
+        .browsercolor {
+            color:#333;
+            font-size:16px;
+            font-weight:bold;
+        }
+        .ie {
+            background-color:blue;
+        }
+        .firefox {
+            background-color:green;
+        }
+        .webkit {
+            background-color:yellow;
+        }
+        #tipTable td,#tipTable th {
+            border:1px solid black;
+            width:56px;
+            height:16px;
+            text-align:center;
+        }
+        #wordTable td {
+            margin-left:8px;
+        }
+        span {
+            padding: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #ieTip {
+            display:none;
+        }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            _:-ms-fullscreen, :root #ieTip {
+                display:block;
+            } /* IE10+ */
+        }
+        #firefoxTip {
+            display:none;
+        }
+        #firefoxTip, x:-moz-any-link, x:default {
+            display:block;/*IE7 firefox3.5及以下 识别 */
+            +display:none;/*再区分一次IE7*/
+        }
+        @-moz-document url-prefix() {
+            #firefoxTip {
+                display:block;/*仅 firefox 识别 */
+            }
+        }
+        #webkitTip {
+            display:none;
+        }
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            #webkitTip {
+                display:block;
+            }/* Opera 有效 */
+        }
+    </style>
+</head>
+<body>
+<h3>CSS Hack 应用</h3>
+<table class="browsers" width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>IE10+</td>
+        <td></td>
+        <td>Firefox</td>
+        <td></td>
+        <td>WebKit(Chrome/Opera/Safari)</td>
+        <td></td>
+    </tr>
+    <tr class="browsercolor">
+        <td class="ie">IE10+</td>
+        <td></td>
+        <td class="firefox">Firefox</td>
+        <td></td>
+        <td class="webkit">WebKit(Chrome/Opera/Safari)</td>
+        <td></td>
+    </tr>
+</table>
+<div class="div-color">
+    <span id="ieTip">
+        IE10+的辨别色是蓝色
+    </span >
+    <span id="firefoxTip">
+        Firefox的辨别色是绿色
+    </span >
+    <span id="webkitTip">
+        WebKit(Chrome/Opera/Safari)的辨别色是黄色(Webkit内核)
+    </span >
+    <!--[if IE 8]>IE8的辨别色是蓝色<![endif]-->
+    <!--[if IE 7]>IE7的辨别色是紫色<![endif]-->
+    <!--[if IE 6]>IE6的辨别色是红色<![endif]-->
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>基本选择器</title>
+<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+<style type="text/css">
+  body{
+	  font-size:9pt;
+  }
+  .divclass{
+	  font-style:italic;
+  }
+  .spanclass{
+	  font-weight:bold;
+  }  
+</style>
+<script type="text/javascript">
+$(document).ready(function(e) {
+   //使用标签选择器更改字体大小
+   $("div").css("font-size","18px");
+   //使用id选择器更改背景色
+   $("#div2").css("background","red");
+   //使用类选择器设置字体样式
+   $(".spanclass").css("font-style","italic");
+   //使用选择器组合
+   $("#div2,#span2").css("background","#9F0");
+   //通配符选择器
+   $("*").css("color","red");
+});
+</script>
+</head>
+<body>
+<div id="div1">我是第1个div</div>
+<div id="div2">我是第2个div</div>
+<div class="divclass">我是第3个div</div>
+<span id="span1">我是第1个span</span>
+<span id="span2">我是第2个span</span>
+<span class="spanclass">我是第3个span</span>
+</body>
+</html>

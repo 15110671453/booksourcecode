@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>prop 示例</title>
+<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+<script type="text/javascript">
+function check() 
+{ 
+var s=$("#check1").attr("checked");
+//var s=$("#check1").prop("checked"); 
+alert(s);
+}
+</script>
+</head>
+
+<body>
+ <input id="check1" type="checkbox" onclick="check()">来选我吧
+<p></p>
+</body>
+
+</html>

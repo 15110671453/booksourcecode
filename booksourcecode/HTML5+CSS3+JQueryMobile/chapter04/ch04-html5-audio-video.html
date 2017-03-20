@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+    </style>
+    <title>HTML5新特性之多媒体</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5新特性之多媒体</nav>
+    </header>
+    <div>
+        <h5>HTML5音频播放器</h5>
+        <audio src="media/audio.wav" controls="controls">
+            该浏览器不支持 audio 标签
+        </audio>
+    </div>
+    <br/>
+    <div>
+        <h5>HTML5视频播放器</h5>
+        <button onclick="playPause()">播放/暂停</button><br/>
+        <video id="id-video" style="margin-top:4px; width:auto">
+            <source src="media/video.mp4" type="video/mp4" />
+            该浏览器不支持 video 标签
+        </video>
+    </div>
+    <script type="text/javascript">
+        var vVideo=document.getElementById("id-video");
+        function playPause() {
+            if (vVideo.paused)
+                vVideo.play();
+            else
+                vVideo.pause();
+        }
+    </script>
+</body>
+</html>

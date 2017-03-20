@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        nav {
+            font: bold 20px arial,sans-serif;
+            text-align: center;
+        }
+        form {
+            margin: 8px;
+        }
+        input {
+            margin: 4px;
+        }
+    </style>
+    <title>HTML5表单新特性之form属性</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5表单新特性之form属性</nav>
+    </header>
+    <hr>
+    <form action="#" method="get" autocomplete="on" id="form-login">
+        First name:<input type="text" name="fname" /><br />
+        E-mail: <input type="email" name="email"
+                       autocomplete="off" /><br />
+        <input type="submit" />
+    </form>
+    Last name: <input type="text" name="lname" form="form-login" /><br />
+</body>
+</html>

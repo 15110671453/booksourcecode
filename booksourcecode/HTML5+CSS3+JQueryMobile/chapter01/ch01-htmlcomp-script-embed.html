@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        div {
+            margin: 2px;
+            padding: 2px;
+            width: auto;
+            height: auto;
+            border: 1px solid #000;
+        }
+    </style>
+    <script type="text/javascript">
+        document.write("<h5>log: header - script</h5>");
+        document.close();
+        document.getElementById("id-div-header").innerHTML += "<br><h3>header - script</h3>";
+    </script>
+    <title>HTML之嵌入式script</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <h3>HTML之嵌入式script</h3>
+    <hr>
+    <!-- 添加文档主体内容 -->
+    <div id="id-div-header">header script log:</div>
+    <!-- 添加脚本 -->
+    <script type="text/javascript">
+        document.write("<h5>log: dynamic - script</h5>");
+        document.write("<div id='id-div-dynamic'>dynamic script log:</div>");
+        document.close();
+        document.getElementById("id-div-dynamic").innerHTML += "<br><h3>dynamic - script</h3>";
+    </script>
+    <!-- 添加文档主体内容 -->
+    <div id="id-div-body">body script log:</div>
+    <!-- 添加脚本 -->
+    <script type="text/javascript">
+        document.write("<h5>log: body - script</h5>");
+        document.close();
+        document.getElementById("id-div-body").innerHTML += "<br><h3>body - script</h3>";
+    </script>
+</body>
+</html>

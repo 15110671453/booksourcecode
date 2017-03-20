@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>层次选择器</title>
+<style type="text/css">
+<!--
+
+*{margin:0;padding:0;border:0;}
+body {
+    font-family: arial, 宋体, serif;
+        font-size:12px;
+}
+
+
+#nav {
+     line-height: 24px;  list-style-type: none; background:#666;
+}
+
+#nav a {
+    display: block; width: 80px; text-align:center;
+}
+
+#nav a:link  {
+    color:#666; text-decoration:none;
+}
+#nav a:visited  {
+    color:#666;text-decoration:none;
+}
+#nav a:hover  {
+    color:#FFF;text-decoration:none;font-weight:bold;
+}
+
+#nav li {
+    float: left; width: 80px; background:#CCC;
+}
+#nav li a:hover{
+    background:#999;
+}
+#nav li ul {
+    line-height: 27px;  list-style-type: none;text-align:left;
+    left: -999em; width: 180px; position: absolute;
+}
+#nav li ul li{
+    float: left; width: 180px;
+    background: #F6F6F6;
+}
+
+
+#nav li ul a{
+    display: block; width: 156px;text-align:left;padding-left:24px;
+}
+
+#nav li ul a:link  {
+    color:#666; text-decoration:none;
+}
+#nav li ul a:visited  {
+    color:#666;text-decoration:none;
+}
+#nav li ul a:hover  {
+    color:#F3F3F3;text-decoration:none;font-weight:normal;
+    background:#C00;
+}
+
+#nav li:hover ul {
+    left: auto;
+}
+#nav li.sfhover ul {
+    left: auto;
+}
+#content {
+    clear: left;
+}
+
+
+-->
+</style>
+<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(e) {
+    //根据ul元素匹配所有的li元素，设置所有li元素的字体为粗体
+    $("ul li").css("font-weight","bold");
+	//让服务介绍的背景li为绿色
+	$("#services li").css("background","#9F9");
+	//为了避免设置父元素的CSS继承到子元素，这里先单独设置了子元素的字体
+	$("#product,#services").css("font-size","9pt");
+	//根据父子元素规则设置子元素
+	$("#nav>li").css("font-size","14px");
+	//使用相邻选择器选择元素
+	//$("#prod1+li").css("font-style","italic");
+	$("#prod1").next().css("font-style","italic");
+	//使用平级选择器选择元素
+	//$("#srv2~li").css("font-style","italic");
+	//$("#srv2").nextAll().css("font-style","italic");
+	//选择所有的相邻元素
+	$("#srv2").siblings("li").css("font-style","italic");
+});
+</script>
+</head>
+
+<body>
+<ul id="nav">
+<li><a href="#">产品介绍</a>
+    <ul id="product">
+    <li><a href="#">产品一</a></li>
+    <li><a href="#">产品二</a></li>
+    <li id="prod1"><a href="#">产品三</a></li>
+    <li><a href="#">产品四</a></li>
+    <li><a href="#">产品五</a></li>
+    <li><a href="#">产品六</a></li>
+    </ul>
+</li>
+<li><a href="#">服务介绍</a>
+    <ul id="services">
+    <li><a href="#">服务一</a></li>
+    <li id="srv2"><a href="#">服务二</a></li>
+    <li><a href="#">服务三</a></li>
+    <li><a href="#">服务四服务五</a></li>
+    <li><a href="#">服务四服务五服务六</a></li>
+    <li><a href="#">服务七</a></li>
+    </ul>
+</li>
+</ul>
+</body>
+</html>

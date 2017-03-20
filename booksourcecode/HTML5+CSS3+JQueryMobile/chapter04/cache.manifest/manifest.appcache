@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 2015-12-16 v1.0.0
+/style.css
+/png1.png
+/png2.png
+/png3.png
+/manifest.js
+
+NETWORK:
+
+FALLBACK:
+/404.html

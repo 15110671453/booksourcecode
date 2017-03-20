@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        canvas {
+            margin: 4px;
+            border: 1px solid black;
+        }
+    </style>
+    <title>HTML5新特性之画布</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5新特性之画布（canvas）标签元素</nav>
+    </header>
+    <div>
+        <canvas id="id-canvas" width="300" height="200"
+                onmousemove="canvas_getCoordinates(event)"
+                onmouseout="canvas_clearCoordinates()">
+        </canvas>
+    </div>
+    <footer>
+        <div id="id-footer"></div>
+    </footer>
+    <script type="text/javascript">
+        /* 获取画布id */
+        var idc = document.getElementById("id-canvas");
+        /* 获取画布上下文环境 */
+        var cxt = idc.getContext("2d");
+        /* 定义画布填充风格 */
+        cxt.fillStyle = "#FF0000";
+        /* 定义画布填充矩形 */
+        cxt.fillRect(50,50,50,35);
+        /* 开始画布路径 */
+        cxt.beginPath();
+        /* 定义画布绘图方法 */
+        cxt.arc(100,100,35,0,Math.PI*2,true);
+        /* 结束画布路径 */
+        cxt.closePath();
+        /* 画布填充 */
+        cxt.fill();
+        /* 定义画布字体 */
+        cxt.font = "16px 宋体";
+        /* 定义画布绘图文字 */
+        cxt.fillText("画布（canvas）标签元素",50,175,150);
+        /* 获取画布坐标函数 */
+        function canvas_getCoordinates(e) {
+            x = e.clientX;
+            y = e.clientY;
+            document.getElementById("id-footer").innerHTML =
+                    "画布（canvas）坐标: (" + x + "," + y + ")";
+        }
+        /* 清除画布坐标函数 */
+        function canvas_clearCoordinates() {
+            document.getElementById("id-footer").innerHTML =
+                    "画布（canvas）坐标:";
+        }
+    </script>
+</body>
+</html>

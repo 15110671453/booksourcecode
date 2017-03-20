@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 添加文档头部内容 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        input {
+            margin: 2px;
+            padding: 2px;
+            width: 64px;
+            border: 1px solid #000;
+        }
+    </style>
+    <title>HTML之标签元素name</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <h3>HTML之标签元素name</h3>
+    <hr>
+    <!-- 添加文档主体内容 -->
+    <label>input数组:</label><br>
+    <input type="text" name="name-input" value="input"/><br>
+    <input type="text" name="name-input" value="input"/><br>
+    <input type="text" name="name-input" value="input"/><br>
+    <input type="text" name="name-input" value="input"/><br>
+    <input type="text" name="name-input" value="input"/><br><br>
+    input数组长度: <input type="text" id="id-input" value=""/><br>
+    <script type="text/javascript">
+        var len = document.getElementsByName("name-input").length;
+        document.getElementById("id-input").value = len;
+    </script>
+</body>
+</html>

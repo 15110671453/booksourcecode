@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--添加对表单样式设置文件-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--添加对jQuery库的引用-->
+<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+<title>JavaScript示例1</title>
+<script type="text/javascript">
+   //使用javaScript更改表单背景色
+   function setColorByJs(){
+	   //获取input元素集合
+	   var inputs=document.getElementsByTagName("input");
+	   //循环元素集合，为每一个元素设置背景色
+	   for(var i=0;i<inputs.length;i++){
+		   inputs[i].style.background="#efefef";		   
+	   }
+	   //获取textarea元素集合
+	   var textareas=document.getElementsByTagName("textarea");
+	   //循环元素集合，为每一个元素设置背景色	   
+	   for(var i=0;i<textareas.length;i++){
+		   textareas[i].style.background="#efefef";		   
+	   }
+   }
+   //使用jQuery更改表单背景色
+   function setColorByjQuery(){
+	   $(":input").css("background","#efefef");	   			//更改input元素的背景色
+	   $(":textarea").css("background","#efefef");	   	   	//更改textarea元素的背景色
+
+   }
+</script>
+</head>
+
+<body>
+使用JavaScript代码更改DOM元素
+<!--表单元素-->
+ <form action="" id="contacts-form">
+    <fieldset>
+      <label><span>姓名:</span><input type="text" /></label>
+      <label><span>民子邮件:</span><input type="text" /></label>
+      <div class="wrapper"><span>留言:</span><textarea></textarea></div>
+    </fieldset>
+</form>
+<!--操作按钮-->
+<div class="wrapper">
+<a href="#" class="button" onClick="javascript:setColorByJs();">JavaScript更改表单颜色</a>
+<a href="#" class="button" onClick="javascript:setColorByjQuery();">jQuery更改表单颜色</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/css">
+        label {
+            margin: 4px;
+            width: 96px;
+            text-align: justify;
+        }
+        input {
+            margin: 4px;
+        }
+    </script>
+    <title>HTML5表单之datalist标签元素</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <h3>HTML5表单之使用datalist标签元素实现自动提示</h3>
+    <!-- 添加文档主体内容 -->
+    <form action="#" method="get" autocomplete="on">
+        <label for="id-datalist">DataList:</label><br>
+        <input id="id-datalist" list="web" />
+        <datalist id="web">
+            <option value="HTML5">
+            <option value="CSS3">
+            <option value="JavaScript">
+            <option value="jQuery">
+            <option value="Node">
+        </datalist>
+    </form>
+</body>
+</html>

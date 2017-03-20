@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>属性过滤选择器</title>
+<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(e) {
+	$("div[id]").css("background","#0F0");        //具有id属性的元素的背景色
+	$('div[id="hey"]').css("font-size","14px");    //id属性为hey元素的字体
+	$('div[id!="hey"]').css("font-size","16px");    //id属性不为hey元素的字体		
+	$('div[id^="the"]').css("color","#090");       //id属性以the开头的的前景色
+	$('div[id$="be"]').css("color","#C00");		  //id属性以be结束的前景色
+	$('div[id*="er"]').css("color","#360");		  //id属性值中包含er的前景色	    
+});
+</script>
+</head>
+
+<body>
+ <div id="hey">具有id属性hey的元素</div>    
+ <div id="there">具有id属性there的元素</div>   
+ <div id="adobe">具有id属性adobe的元素</div>    
+ <div>无id属性</div> 
+</body>
+</html>

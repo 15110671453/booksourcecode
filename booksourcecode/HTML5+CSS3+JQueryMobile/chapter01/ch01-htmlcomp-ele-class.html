@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 添加文档头部内容 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        p.classnormal {
+            margin: 4px;
+            padding: 2px;
+            width: 196px;
+            font: normal 13.5px/1.2em arial,verdana;
+        }
+        p.classitalic {
+            margin: 4px;
+            padding: 2px;
+            width: 196px;
+            font: italic 13.5px/1.2em arial,verdana;
+        }
+        p.classbold {
+            margin: 4px;
+            padding: 2px;
+            width: 196px;
+            font: bold 13.5px/1.2em arial,verdana;
+        }
+    </style>
+    <title>HTML之标签元素class</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <h3>HTML之标签元素class</h3>
+    <hr>
+    <!-- 添加文档主体内容 -->
+    <div>
+        <button type="button" id="id-button-normal" onclick="on_normal_click();">
+            change to normal style
+        </button>
+        <button type="button" id="id-button-italic" onclick="on_italic_click();">
+            change to italic style
+        </button>
+        <button type="button" id="id-button-bold" onclick="on_bold_click();">
+            change to bold style
+        </button>
+    </div>
+    <!-- 添加文档主体内容 -->
+    <p class="classnormal">HTML之标签元素class</p>
+    <p class="classnormal">HTML之标签元素class</p>
+    <p class="classnormal">HTML之标签元素class</p>
+    <p class="classnormal">HTML之标签元素class</p>
+    <p class="classnormal">HTML之标签元素class</p>
+    <script type="text/javascript">
+        function on_normal_click() {
+            for(i=0;i<5;i++) {
+                document.getElementsByTagName("p")[i].className = "classnormal";
+            }
+        }
+        function on_italic_click() {
+            for(i=0;i<5;i++) {
+                document.getElementsByTagName("p")[i].className = "classitalic";
+            }
+        }
+        function on_bold_click() {
+            for(i=0;i<5;i++) {
+                document.getElementsByTagName("p")[i].className = "classbold";
+            }
+        }
+    </script>
+</body>
+</html>

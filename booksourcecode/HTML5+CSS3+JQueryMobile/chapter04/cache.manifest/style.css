@@ -1,0 +1,11 @@
+nav {
+    font: bold 20px arial,sans-serif;
+    text-align: center;
+}
+div {
+    margin: 16px;
+}
+p {
+    margin: 8px;
+    font: normal 16px arial,sans-serif;
+}

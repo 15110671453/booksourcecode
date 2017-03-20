@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+        nav {
+            background-color: grey;
+        }
+        div:before {
+            content:"before div - ";
+            background-color: lightgray;
+        }
+        div:after {
+            content:" - div after";
+            background-color: darkgray;
+        }
+        p:before {
+            content:"before content - ";
+            background-color: lightgray;
+        }
+        p:after {
+            content:" - content after";
+            background-color: darkgray;
+        }
+    </style>
+    <title>CSS选择器之伪元素选择器</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header id="id-header">
+        <nav>CSS选择器之伪元素选择器</nav>
+    </header>
+    <hr>
+    <div>
+        <p>
+            CSS选择器之伪元素选择器
+        </p>
+    </div>
+    <hr>
+    <footer id="id-footer">CSS选择器之伪元素选择器</footer>
+</body>
+</html>

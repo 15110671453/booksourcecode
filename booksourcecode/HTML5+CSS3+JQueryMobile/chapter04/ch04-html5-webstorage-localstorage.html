@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        nav {
+            font: bold 20px arial,sans-serif;
+            text-align: center;
+        }
+        div {
+            margin: 16px;
+        }
+        p {
+            margin: 8px;
+            font: normal 16px arial,sans-serif;
+        }
+    </style>
+    <title>HTML5 - Web存储localStorage存储方式</title>
+</head>
+<body>
+    <!-- 添加文档主体内容 -->
+    <header>
+        <nav>HTML5 - Web存储localStorage存储方式</nav>
+    </header>
+    <hr>
+    <div id="id-visitor-counts"></div>
+    <div>
+        <p>说明：</p>
+        <p>用户每刷新一次页面,计数器会随之增长.</p>
+        <p>即使用户关闭该页面,重新打开页面后计数器会继续计数.</p>
+    </div>
+    <script type="text/javascript">
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        document.getElementById("id-visitor-counts").innerHTML =
+                "Visits: " + localStorage.pagecount + " time(s).";
+    </script>
+</body>
+</html>
